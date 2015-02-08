@@ -1,0 +1,12 @@
+To compile:
+	Go to this directory and run make.
+
+To run shell:
+	After compiling, go to this folder and run ./shell.
+
+
+Note:
+	The environment where this program was compiled, tested and run is Mac OS X Mavericks Apple LLVM version 5.1.
+
+
+Ran Pang 2014-9-18

@@ -1,0 +1,12 @@
+cd install
+./bin/qemu-system-x86_64 -m 64M -L ./share/qemu/ -curses -hda openwrt-x86-generic-combined-ext2.img
+
+
+make mrproper
+cp csc256.config .config
+make oldconfig
+make -j 30
+
+./install/bin/qemu-system-x86_64 -m 64M -L ./install/share/qemu/ -curses -hda ./install/openwrt-x86-generic-combined-ext2.img -kernel ./linux-2.6.32.63/arch/x86_64/boot/bzImage -append "root=/dev/sda2 rootfstype=ext2" -fda fat:floppy:./install/test
+
+mount -t msdos /dev/fd0 /mnt
